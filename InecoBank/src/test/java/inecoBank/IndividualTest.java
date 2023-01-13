@@ -1,7 +1,8 @@
 package inecoBank;
 
-import inecoBank.pages.Individuals;
-import inecoBank.pages.navMenu.Account;
+
+import inecoBank.pages.pages.Individuals;
+import inecoBank.pages.pages.navMenu.Account;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -14,8 +15,7 @@ public class IndividualTest extends BaseTest{
         Account account = individual.newAccount();
 
         Assert.assertEquals(ACCOUNTS, account.getURL());
-//        driver.get("https://www.google.com/");
-//        Assert.assertEquals(driver.getCurrentUrl(), "https://www.google.com/" );
+
 
     }
 }

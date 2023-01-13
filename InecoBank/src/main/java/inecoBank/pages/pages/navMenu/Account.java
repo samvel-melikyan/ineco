@@ -49,7 +49,7 @@ public class Account extends BasePage {
 
     @Override
     protected void isLoaded() throws Error {
-        WaitHelpers.waitForJSToLoad();
+         WaitHelpers.waitForJSToLoad(driver);
     }
 
     public String getURL() {

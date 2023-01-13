@@ -1,24 +1,17 @@
 package inecoBank.pages.pages;
 
-import inecoBank.pages.navMenu.Account;
-import inecoBank.pages.navMenu.Cards;
-import inecoBank.pages.navMenu.Loans;
-import inecoBank.pages.navMenu.Savings;
-import org.openqa.selenium.WebDriver;
+import inecoBank.pages.pages.navMenu.Account;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import util.WaitHelpers;
 
-import java.util.ArrayList;
-
 import static util.CustomElement.click;
-import static util.CustomElement.sendKyes;
 import static util.URL.INDIVIDUALS;
 
 public class Individuals extends BasePage {
     //  #come_online
-    @FindBy(css = "//*[@id=\"promotion.individual.homepage.online.services.1\"]/div/div[2]/div[2]/div/div/a/div")
+    @FindBy(css = "#promotion\\.individual\\.homepage\\.online\\.services\\.1 > div > div.promotion__description > div.promotion__links > div")
     private WebElement openAnewAccount;
 //    //  #order_online
 //    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[1]/a")
@@ -97,7 +90,6 @@ public class Individuals extends BasePage {
     public Individuals(){
         super();
         get();
-//        load();
         PageFactory.initElements(driver,this);
     }
 
@@ -222,7 +214,7 @@ public class Individuals extends BasePage {
 
     @Override
     public void isLoaded() throws Error {
-        WaitHelpers.waitForJSToLoad();
+        WaitHelpers.waitForJSToLoad(driver);
     }
 
 
