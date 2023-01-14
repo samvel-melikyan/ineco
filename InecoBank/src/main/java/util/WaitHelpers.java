@@ -13,11 +13,11 @@ public class WaitHelpers {
 
     private static WebDriverWait wait;
 
-    public static int waitTime;
+    public static int waitTime = 10;
 
 
     public static void toBeClickable(WebElement element) {
-        wait = new WebDriverWait(getDriver(), 10);
+        wait = new WebDriverWait(getDriver(), waitTime);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
@@ -63,19 +63,15 @@ public class WaitHelpers {
     }
 
 
-    public static boolean waitForJSToLoad(WebDriver driver) {
+    public static boolean waitForJSToLoad(WebDriver driver, String URLs) {
         wait = new WebDriverWait(driver, 30);
         // wait for Javascript to load
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
-
             @Override
             public Boolean apply(WebDriver driver) {
-                boolean ex = executeJavaScript(driver, "return document.readyState").toString().equals("complete");
-                System.out.println(ex + ": isJsLoaded");
-                return ex;
+                return executeJavaScript(driver, "return document.readyState").toString().equals("complete");
             }
         };
-
         return wait.until(jsLoad);
     }
 

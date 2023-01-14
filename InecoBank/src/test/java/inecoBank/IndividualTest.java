@@ -1,8 +1,8 @@
 package inecoBank;
 
 
-import inecoBank.pages.pages.Individuals;
-import inecoBank.pages.pages.navMenu.Account;
+import inecoBank.navMenu.Account;
+import inecoBank.pages.Individuals;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

@@ -12,13 +12,7 @@ public abstract class CustomLoadableComponent<T extends CustomLoadableComponent<
             this.isLoaded();
             return (T) this;
         }
-//        if(this.isLoaded()) {
-//            return (T) this;
-//        }else {
-//            this.load();
-//            this.isLoaded();
-//            return (T) this;
-//        }
+
     }
 
     protected abstract void load();
