@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Component Tests]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="3" parallel="tests" name="Test(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="Port" value="9001"/>
+    <classes>
+      <class name="inecoBank.IndividualTest">
+        <methods>
+          <include name="t"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- inecoBank.IndividualTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Component Tests] -->
