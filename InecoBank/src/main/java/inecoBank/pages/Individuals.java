@@ -1,6 +1,7 @@
 package inecoBank.pages;
 
-import inecoBank.navMenu.Account;
+import inecoBank.individualNavMenu.Account;
+import inecoBank.individualNavMenu.Cards;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,14 +9,15 @@ import util.WaitHelpers;
 
 import static util.CustomElement.click;
 import static util.URL.INDIVIDUALS;
+import static util.WaitHelpers.waitForJSToLoad;
 
 public class Individuals extends BasePage {
     //  #come_online
     @FindBy(css = "#promotion\\.individual\\.homepage\\.online\\.services\\.1 > div > div.promotion__description > div.promotion__links > div")
     private WebElement openAnewAccount;
 //    //  #order_online
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[1]/a")
-//    private WebElement visa;
+    @FindBy(css = "#promotion\\.individual\\.homepage\\.online\\.services\\.2․cards > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)")
+    private WebElement visa;
 //    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[2]/a")
 //    private WebElement master;
 //    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[3]/a")
@@ -89,6 +91,11 @@ public class Individuals extends BasePage {
 
     public Individuals(){
         super();
+        get();
+        PageFactory.initElements(driver,this);
+    }
+    public Individuals(String url){
+        super();
         url = INDIVIDUALS;
         get();
         PageFactory.initElements(driver,this);
@@ -102,10 +109,10 @@ public class Individuals extends BasePage {
 //
 //    }
 
-//    public Cards visaBn(){
-//        click(visa);
-//        return new Cards();
-//    }
+    public Cards visaBtn(){
+        click(visa);
+        return new Cards();
+    }
 //    public Cards arCaBn(){
 //        click(arCa);
 //        return new Cards();
@@ -210,13 +217,17 @@ public class Individuals extends BasePage {
 
     @Override
     public void load() {
-        driver.get(this.url);
+        driver.get(INDIVIDUALS);
     }
+//    @Override
+//    public void load(String url) {
+//        driver.get(url);
+//    }
 
     @Override
     public void isLoaded() throws Error {
         load();
-        WaitHelpers.waitForJSToLoad(driver, this.url);
+        waitForJSToLoad(driver);
     }
 
 

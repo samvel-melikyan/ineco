@@ -36,7 +36,9 @@ public class URL {
     public static final String LOAN_POINT_OF_SALES = INDIVIDUALS + "/point-of-sales" ;
     public static final String LOAN_MICROBUSINESS = INDIVIDUALS + "/microbusiness-loan" ;
     public static final String CARDS = INDIVIDUALS + "/cards" ;
-    public static final String CARD_VISA = CARDS + "/visa-digital" ;
+    public static final String CARD_VISA = CARDS + "?attachedCardPossibility=false&cardTypes=visa&currency=AMD";
+    public static final String CARD_MASTER = CARDS + "?attachedCardPossibility=false&cardTypes=master&currency=AMD";
+    public static final String CARD_ARCA = CARDS + "?attachedCardPossibility=false&cardTypes=arca&currency=AMD";
     public static final String CARD_CLASSIC = CARDS + "/visa-classic" ;
     public static final String CARD_VISA_GOLD = CARDS + "/visa-gold" ;
     public static final String CARD_MASTERCARD_STANDART = CARDS + "/mastercard-standard" ;

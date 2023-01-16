@@ -54,10 +54,9 @@ public class Header extends CustomLoadableComponent<Header> {
 
     }
 
+
     @Override
     protected void isLoaded() throws Error {
-        load();
-        waitForJSToLoad(driver, BASE);
 
     }
 

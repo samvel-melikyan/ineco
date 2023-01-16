@@ -63,7 +63,7 @@ public class WaitHelpers {
     }
 
 
-    public static boolean waitForJSToLoad(WebDriver driver, String URLs) {
+    public static boolean waitForJSToLoad(WebDriver driver) {
         wait = new WebDriverWait(driver, 30);
         // wait for Javascript to load
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {

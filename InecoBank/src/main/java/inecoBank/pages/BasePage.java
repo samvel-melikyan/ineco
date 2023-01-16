@@ -4,7 +4,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage extends Header {
 
-    protected String url;
 
 ////////////////////////////////////////<footer/topSegment>////////////////////////////////////////////////////////////////////////////////
 //    @FindBy(className="footerContacts__phone")
