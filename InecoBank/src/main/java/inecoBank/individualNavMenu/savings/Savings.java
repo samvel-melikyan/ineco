@@ -1,9 +1,12 @@
-package inecoBank.individualNavMenu;
+package inecoBank.individualNavMenu.savings;
 
+import inecoBank.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class Savings {
+import static util.CustomElement.click;
+
+public class Savings extends BasePage {
 
     @FindBy(linkText = "Savings")
     private WebElement savings;
@@ -24,4 +27,13 @@ public class Savings {
         private WebElement purpose;
 
     ///////////////////////////////////////Savings
+
+    public Simple simpleBtn(){
+        click(simpleDeposit);
+        return new Simple();
+    }
+
+    public String getURL(){
+        return driver.getCurrentUrl();
+    }
 }

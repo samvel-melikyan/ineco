@@ -19,7 +19,7 @@ public class URL {
     public static final String SOCIAL_PACKAGE = ACCOUNTS_SPECIAL + "/social" ;
     public static final String DEPOSITS  = INDIVIDUALS + "/deposits" ;
     public static final String DEPOSITS_REPLENISHABLE = DEPOSITS + "/replenishable";
-    public static final String DEPOSITS_SIMPLE = DEPOSITS + "/simple";
+    public static final String DEPOSIT_SIMPLE = INDIVIDUALS + "/deposit/simple";
     public static final String DEPOSITS_FLEXIBLE = DEPOSITS + "/flexible" ;
     public static final String DEPOSITS_PURPOSE = DEPOSITS + "/special-saving-plan" ;
     public static final String BONDS = INDIVIDUALS + "/shareholders-investors/bonds" ;

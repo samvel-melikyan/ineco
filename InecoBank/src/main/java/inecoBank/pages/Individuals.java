@@ -2,10 +2,10 @@ package inecoBank.pages;
 
 import inecoBank.individualNavMenu.Account;
 import inecoBank.individualNavMenu.Cards;
+import inecoBank.individualNavMenu.savings.Savings;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import util.WaitHelpers;
 
 import static util.CustomElement.click;
 import static util.URL.INDIVIDUALS;
@@ -18,15 +18,16 @@ public class Individuals extends BasePage {
 //    //  #order_online
     @FindBy(css = "#promotion\\.individual\\.homepage\\.online\\.services\\.2․cards > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)")
     private WebElement visa;
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[2]/a")
-//    private WebElement master;
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[3]/a")
-//    private WebElement arCa;
+    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[2]/a")
+    private WebElement master;
+    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.2․cards\"]/div/div[3]/div[2]/div/div[3]/a")
+    private WebElement arCa;
 //    //  #save_online
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[1]/a")
-//    private WebElement simple;
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[2]/a")
-//    private WebElement flexible;
+
+    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[1]/a")
+    private WebElement simple;
+    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[2]/a")
+    private WebElement flexible;
 //    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[3]/a")
 //    private WebElement replenishable;
 //    //  #get_Online
@@ -113,23 +114,23 @@ public class Individuals extends BasePage {
         click(visa);
         return new Cards();
     }
-//    public Cards arCaBn(){
-//        click(arCa);
-//        return new Cards();
-//    }
-//    public Cards masterBn(){
-//        click(master);
-//        return new Cards();
-//    }
-//    public Savings simpleBn(){
-//        click(simple);
-//        return new Savings();
-//    }
-//
-//    public Savings flexibleBn(){
-//        click(flexible);
-//        return new Savings();
-//    }
+    public Cards arCaBtn(){
+        click(arCa);
+        return new Cards();
+    }
+    public Cards masterBtn(){
+        click(master);
+        return new Cards();
+    }
+    public Savings simpleBn(){
+        click(simple);
+        return new Savings();
+    }
+
+    public Savings flexibleBtn(){
+        click(flexible);
+        return new Savings();
+    }
 //    public Savings replenishableBn(){
 //        click(replenishable);
 //        return new Savings();
