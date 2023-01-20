@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/InecoBank/InecoBank.iml" filepath="$PROJECT_DIR$/InecoBank/InecoBank.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/ineco.iml" filepath="$PROJECT_DIR$/.idea/ineco.iml" />
     </modules>
   </component>
 </project>
