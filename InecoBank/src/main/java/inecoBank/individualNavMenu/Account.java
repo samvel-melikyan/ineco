@@ -51,7 +51,7 @@ public class Account extends BasePage {
         load();
         WaitHelpers.waitForJSToLoad(driver);
     }
-
+    @Override
     public String getURL() {
         return driver.getCurrentUrl();
     }

@@ -63,7 +63,7 @@ public class IndividualTest extends BaseTest{
         Assert.assertEquals(DEPOSITS_REPLENISHABLE, replenishable.getURL());
     }
     @Test
-    public void oneC(){
+    public void oneClick(){
         individual = new Individuals();
         OneClick oneClick = individual.oneClickLoanBn();
         Assert.assertEquals(LOAN_ONE_CLCICK, oneClick.getURL());
