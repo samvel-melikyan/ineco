@@ -3,8 +3,10 @@ package inecoBank;
 
 import inecoBank.individualNavMenu.Account;
 import inecoBank.individualNavMenu.Cards;
+import inecoBank.individualNavMenu.loans.OneClick;
+import inecoBank.individualNavMenu.savings.Flexible;
+import inecoBank.individualNavMenu.savings.Replenishable;
 import inecoBank.individualNavMenu.savings.Savings;
-import inecoBank.individualNavMenu.savings.Simple;
 import inecoBank.pages.Individuals;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -51,10 +53,22 @@ public class IndividualTest extends BaseTest{
     @Test
     public void flexible(){
         individual = new Individuals();
-        Savings savings = individual.flexibleBtn();
-        Simple simple = savings.simpleBtn();
-        Assert.assertEquals(DEPOSIT_SIMPLE, simple.getURL());
+        Flexible flexible = individual.flexibleBtn();
+        Assert.assertEquals(DEPOSITS_FLEXIBLE, flexible.getURL());
     }
+    @Test
+    public void replanishable(){
+        individual = new Individuals();
+        Replenishable replenishable = individual.replenishableBn();
+        Assert.assertEquals(DEPOSITS_REPLENISHABLE, replenishable.getURL());
+    }
+    @Test
+    public void oneC(){
+        individual = new Individuals();
+        OneClick oneClick = individual.oneClickLoanBn();
+        Assert.assertEquals(LOAN_ONE_CLCICK, oneClick.getURL());
+    }
+
 
 
 

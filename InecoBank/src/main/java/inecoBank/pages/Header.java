@@ -8,7 +8,7 @@ import static util.BaseDriver.getDriver;
 import static util.URL.BASE;
 import static util.WaitHelpers.waitForJSToLoad;
 
-public class Header extends CustomLoadableComponent<Header> {
+abstract class Header extends CustomLoadableComponent<Header> {
     protected WebDriver driver;
 
     //////////////////////////////////////////<header>//////////////////////////////////////////////////////////////////////////////
@@ -59,6 +59,8 @@ public class Header extends CustomLoadableComponent<Header> {
     protected void isLoaded() throws Error {
 
     }
+
+     protected abstract String getURL();
 
 
 

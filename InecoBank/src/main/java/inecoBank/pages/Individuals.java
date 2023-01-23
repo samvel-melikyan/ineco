@@ -2,6 +2,9 @@ package inecoBank.pages;
 
 import inecoBank.individualNavMenu.Account;
 import inecoBank.individualNavMenu.Cards;
+import inecoBank.individualNavMenu.loans.OneClick;
+import inecoBank.individualNavMenu.savings.Flexible;
+import inecoBank.individualNavMenu.savings.Replenishable;
 import inecoBank.individualNavMenu.savings.Savings;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,11 +31,11 @@ public class Individuals extends BasePage {
     private WebElement simple;
     @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[2]/a")
     private WebElement flexible;
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[3]/a")
-//    private WebElement replenishable;
+    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.5.savings\"]/div/div[3]/div[2]/div/div[3]/a")
+    private WebElement replenishable;
 //    //  #get_Online
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.4․loans\"]/div/div[3]/div[2]/div/div/a")
-//    private WebElement oneClickLoan;
+    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.4․loans\"]/div/div[3]/div[2]/div/div/a")
+    private WebElement oneClickLoan;
 //    //  Contact
 //    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.6\"]/div/div[2]/div[2]/div/div[1]/a")
 //    private WebElement contactCenter;
@@ -127,18 +130,18 @@ public class Individuals extends BasePage {
         return new Savings();
     }
 
-    public Savings flexibleBtn(){
+    public Flexible flexibleBtn(){
         click(flexible);
-        return new Savings();
+        return new Flexible();
     }
-//    public Savings replenishableBn(){
-//        click(replenishable);
-//        return new Savings();
-//    }
-//    public Loans oneClickLoanBn(){
-//        click(oneClickLoan);
-//        return new Loans();
-//    }
+    public Replenishable replenishableBn(){
+        click(replenishable);
+        return new Replenishable();
+    }
+    public OneClick oneClickLoanBn(){
+        click(oneClickLoan);
+        return new OneClick();
+    }
 //    public ContactUs contactCenterBn(){
 //        click(contactCenter);
 //        return new ContactUs();
@@ -231,6 +234,10 @@ public class Individuals extends BasePage {
         waitForJSToLoad(driver);
     }
 
+    @Override
+    protected String getURL() {
+        return driver.getCurrentUrl();
+    }
 
 
 }

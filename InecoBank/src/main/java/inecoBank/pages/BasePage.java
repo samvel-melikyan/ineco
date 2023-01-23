@@ -55,6 +55,7 @@ public abstract class BasePage extends Header {
 //    private WebElement btnToTop;
 ////////////////////////////////////////<buttonToTop>////////////////////////////////////////////////////////////////////////////////
 
+
     protected BasePage ()
     {
         super();
@@ -62,4 +63,7 @@ public abstract class BasePage extends Header {
     }
 
 
-}
+    };
+
+
+
