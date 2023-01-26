@@ -52,13 +52,14 @@ abstract class Header extends CustomLoadableComponent<Header> {
 
     @Override
     protected void load() {
-
+        driver.get(this.url);
     }
 
 
     @Override
     protected void isLoaded() throws Error {
-
+        load();
+        waitForJSToLoad(driver);
     }
 
      protected abstract String getURL();

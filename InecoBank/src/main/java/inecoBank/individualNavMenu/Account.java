@@ -37,13 +37,15 @@ public class Account extends BasePage {
     ///////////////////////////////////////Aacount
     public Account (){
         super();
+        this.url = ACCOUNTS;
         get();
         PageFactory.initElements(driver, this );
     }
 
     @Override
     public void load() {
-        driver.get(ACCOUNTS);
+//        driver.get(url);
+        super.load();
     }
 
     @Override

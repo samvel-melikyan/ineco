@@ -69,12 +69,13 @@ public class IndividualTest extends BaseTest{
         OneClick oneClick = individual.oneClickLoanBn();
         Assert.assertEquals(LOAN_ONE_CLCICK, oneClick.getURL());
     }
+
     @Test
     public void contactUs(){
         individual = new Individuals();
         ContactUs contactUs = individual.contactCenterBn();
         Assert.assertEquals(CONTACT_US, contactUs.getURL());
-    }
+    }//fail!
 
 
 

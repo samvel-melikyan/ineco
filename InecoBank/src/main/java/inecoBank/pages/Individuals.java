@@ -95,12 +95,7 @@ public class Individuals extends BasePage {
 
     public Individuals(){
         super();
-        get();
-        PageFactory.initElements(driver,this);
-    }
-    public Individuals(String url){
-        super();
-        url = INDIVIDUALS;
+        this.url = INDIVIDUALS;
         get();
         PageFactory.initElements(driver,this);
     }
@@ -221,12 +216,9 @@ public class Individuals extends BasePage {
 
     @Override
     public void load() {
-        driver.get(INDIVIDUALS);
-    }
-//    @Override
-//    public void load(String url) {
 //        driver.get(url);
-//    }
+        super.load();
+    }
 
     @Override
     public void isLoaded() throws Error {
@@ -235,7 +227,7 @@ public class Individuals extends BasePage {
     }
 
     @Override
-    protected String getURL() {
+    public String getURL() {
         return driver.getCurrentUrl();
     }
 
