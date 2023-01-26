@@ -47,7 +47,7 @@ public class URL {
     public static final String CARD_MASTERCARD_BLACK = CARDS + "/mastercard-black-edition" ;
     public static final String CARD_VISA_SIGNITURE = CARDS + "/visa-signature" ;
     public static final String CARD_VISA_PLATINIUM = CARDS + "/visa-platinum" ;
-    public static final String CONTACT_US = INDIVIDUALS + "/contact-us";
+    public static final String CONTACT_US = BASE + "/en/contact-us";
 
     public static final String MORTGAGE = INDIVIDUALS + "/mortgage-loans" ;
     public static final String MORTGAGE_CONSTRUCTOR_OFFER = MORTGAGE + "/constructors-offer" ;
