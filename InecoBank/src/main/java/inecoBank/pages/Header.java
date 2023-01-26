@@ -10,6 +10,7 @@ import static util.WaitHelpers.waitForJSToLoad;
 
 abstract class Header extends CustomLoadableComponent<Header> {
     protected WebDriver driver;
+    protected String url;
 
     //////////////////////////////////////////<header>//////////////////////////////////////////////////////////////////////////////
 

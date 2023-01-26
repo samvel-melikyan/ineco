@@ -7,6 +7,7 @@ import inecoBank.individualNavMenu.loans.OneClick;
 import inecoBank.individualNavMenu.savings.Flexible;
 import inecoBank.individualNavMenu.savings.Replenishable;
 import inecoBank.individualNavMenu.savings.Savings;
+import inecoBank.pages.ContactUs;
 import inecoBank.pages.Individuals;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -67,6 +68,12 @@ public class IndividualTest extends BaseTest{
         individual = new Individuals();
         OneClick oneClick = individual.oneClickLoanBn();
         Assert.assertEquals(LOAN_ONE_CLCICK, oneClick.getURL());
+    }
+    @Test
+    public void contactUs(){
+        individual = new Individuals();
+        ContactUs contactUs = individual.contactCenterBn();
+        Assert.assertEquals(CONTACT_US, contactUs.getURL());
     }
 
 

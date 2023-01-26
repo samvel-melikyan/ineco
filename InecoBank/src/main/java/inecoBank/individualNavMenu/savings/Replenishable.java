@@ -3,7 +3,7 @@ package inecoBank.individualNavMenu.savings;
 import inecoBank.pages.BasePage;
 
 public class Replenishable extends BasePage {
-    public String getURL(){
+    @Override
+    public String getURL() {
         return driver.getCurrentUrl();
-    }
-}
+    }}

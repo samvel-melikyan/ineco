@@ -37,8 +37,8 @@ public class Individuals extends BasePage {
     @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.4․loans\"]/div/div[3]/div[2]/div/div/a")
     private WebElement oneClickLoan;
 //    //  Contact
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.6\"]/div/div[2]/div[2]/div/div[1]/a")
-//    private WebElement contactCenter;
+    @FindBy(xpath = "#promotion\\.individual\\.homepage\\.online\\.services\\.6 > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)")
+    private WebElement contactCenter;
 //    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.6\"]/div/div[2]/div[2]/div/div[2]/a")
 //    private WebElement e_mail;
 //
@@ -142,10 +142,10 @@ public class Individuals extends BasePage {
         click(oneClickLoan);
         return new OneClick();
     }
-//    public ContactUs contactCenterBn(){
-//        click(contactCenter);
-//        return new ContactUs();
-//    }
+    public ContactUs contactCenterBn(){
+        click(contactCenter);
+        return new ContactUs();
+    }
 //    public ContactUs e_mailBn(){
 //        click(e_mail);
 //        return new ContactUs();
