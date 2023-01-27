@@ -5,7 +5,6 @@ import org.openqa.selenium.support.PageFactory;
 import util.CustomLoadableComponent;
 
 import static util.BaseDriver.getDriver;
-import static util.URL.BASE;
 import static util.WaitHelpers.waitForJSToLoad;
 
 abstract class Header extends CustomLoadableComponent<Header> {

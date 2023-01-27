@@ -9,10 +9,17 @@ import inecoBank.individualNavMenu.savings.Replenishable;
 import inecoBank.individualNavMenu.savings.Savings;
 import inecoBank.pages.ContactUs;
 import inecoBank.pages.Individuals;
+import inecoBank.pages.NotExist;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static util.URL.*;
+import static util.url.URL.CONTACT_US;
+import static util.url.Account.ACCOUNTS;
+import static util.url.Card.CARD_ARCA;
+import static util.url.Card.CARD_MASTER;
+import static util.url.Deposit.*;
+import static util.url.Loan.LOAN_ONE_CLCICK;
+import static util.url.URL.NOT_EXIST;
 
 public class IndividualTest extends BaseTest{
     private Individuals individual;
@@ -24,11 +31,11 @@ public class IndividualTest extends BaseTest{
         Assert.assertEquals(ACCOUNTS, account.getURL());
     }
     @Test
-    public void visaCard(){
+    public void visaCard(String cardVisa){
         individual = new Individuals();
         Cards card = individual.visaBtn();
         card.toVisa();
-        Assert.assertEquals(CARD_VISA, card.getURL());
+        Assert.assertEquals(cardVisa, card.getURL());
     }
 
     @Test
@@ -75,7 +82,37 @@ public class IndividualTest extends BaseTest{
         individual = new Individuals();
         ContactUs contactUs = individual.contactCenterBn();
         Assert.assertEquals(CONTACT_US, contactUs.getURL());
-    }//fail!
+    }
+    @Test
+    public void eMail(){
+        individual = new Individuals();
+        ContactUs contactUs = individual.e_mailBtn();
+        Assert.assertEquals(CONTACT_US, contactUs.getURL());
+    }
+    @Test
+    public void loanRepayment(){
+        individual = new Individuals();
+        NotExist notExist = individual.loanRepaymentBtn();
+        Assert.assertEquals(NOT_EXIST, notExist.getURL());
+    }
+    @Test
+    public void depositReplenishment(){
+        individual = new Individuals();
+        NotExist notExist = individual.depositReplenishmentBtn();
+        Assert.assertEquals(NOT_EXIST, notExist.getURL());
+    }
+    @Test
+    public void cardReplenishment(){
+        individual = new Individuals();
+        NotExist notExist = individual.cardReplenishmentBtn();
+        Assert.assertEquals(NOT_EXIST, notExist.getURL());
+    }
+    @Test
+    public void accountReplenishment(){
+        individual = new Individuals();
+        NotExist notExist = individual.accounReplenishmentBtn();
+        Assert.assertEquals(NOT_EXIST, notExist.getURL());
+    }
 
 
 

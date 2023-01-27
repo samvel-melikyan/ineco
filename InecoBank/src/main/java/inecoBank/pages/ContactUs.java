@@ -2,8 +2,7 @@ package inecoBank.pages;
 
 import org.openqa.selenium.support.PageFactory;
 
-import static util.URL.CONTACT_US;
-import static util.WaitHelpers.waitForJSToLoad;
+import static util.url.URL.CONTACT_US;
 
 public class ContactUs extends BasePage{
 

@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static util.CustomElement.click;
-import static util.URL.INDIVIDUALS;
+import static util.url.URL.INDIVIDUALS;
 import static util.WaitHelpers.waitForJSToLoad;
 
 public class Individuals extends BasePage {
@@ -39,18 +39,18 @@ public class Individuals extends BasePage {
 //    //  Contact
     @FindBy(css = "#promotion\\.individual\\.homepage\\.online\\.services\\.6 > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > a:nth-child(1)")
     private WebElement contactCenter;
-//    @FindBy(xpath = "//*[@id=\"promotion.individual.homepage.online.services.6\"]/div/div[2]/div[2]/div/div[2]/a")
-//    private WebElement e_mail;
+    @FindBy(css = "#promotion\\.individual\\.homepage\\.online\\.services\\.6 > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > a:nth-child(1)")
+    private WebElement e_mail;
 //
 //    //  Online Payments
-//    @FindBy(xpath = "//*[@id=\"InecoPromotion.individual.homepage.payments\"]/div/div[3]/div[2]/div/div[1]/a")
-//    private WebElement loanRepayment;
-//    @FindBy(xpath = "//*[@id=\"InecoPromotion.individual.homepage.payments\"]/div/div[3]/div[2]/div/div[2]/a")
-//    private WebElement depositReplenishment;
-//    @FindBy(xpath = "//*[@id=\"InecoPromotion.individual.homepage.payments\"]/div/div[3]/div[2]/div/div[3]/a")
-//    private WebElement cardReplenishment;
-//    @FindBy(xpath = "//*[@id=\"InecoPromotion.individual.homepage.payments\"]/div/div[3]/div[2]/div/div[4]/a")
-//    private WebElement accounReplenishment;
+    @FindBy(css = "div.c-row__col--6:nth-child(1) > a:nth-child(1)")
+    private WebElement loanRepayment;
+    @FindBy(css = "div.c-row__col--6:nth-child(2) > a:nth-child(1)")
+    private WebElement depositReplenishment;
+    @FindBy(css = "div.c-row__col--6:nth-child(3) > a:nth-child(1)")
+    private WebElement cardReplenishment;
+    @FindBy(css = "div.squareLinkGroup__item:nth-child(4) > a:nth-child(1)")
+    private WebElement accounReplenishment;
 //
 //    //  Exchange RAtes
 //    @FindBy(className="btn btn--primary  ")
@@ -141,23 +141,27 @@ public class Individuals extends BasePage {
         click(contactCenter);
         return new ContactUs();
     }
-//    public ContactUs e_mailBn(){
-//        click(e_mail);
-//        return new ContactUs();
-//    }
-//
-//    public NotExist loanRepaymentBn(){
-//        click(loanRepayment);
-//        return new NotExist();
-//    }
-//    public NotExist depositReplenishmentBn(){
-//        click(depositReplenishment);
-//        return new NotExist();
-//    }
-//    public NotExist cardReplenishmentBn(){
-//        click(cardReplenishment);
-//        return new NotExist();
-//    }
+    public ContactUs e_mailBtn(){
+        click(e_mail);
+        return new ContactUs();
+    }
+
+    public NotExist loanRepaymentBtn(){
+        click(loanRepayment);
+        return new NotExist();
+    }
+    public NotExist depositReplenishmentBtn(){
+        click(depositReplenishment);
+        return new NotExist();
+    }
+    public NotExist cardReplenishmentBtn(){
+        click(cardReplenishment);
+        return new NotExist();
+    }
+    public NotExist accounReplenishmentBtn(){
+        click(accounReplenishment);
+        return new NotExist();
+    }
 //
 //    public void cashBtnBn(){
 //        click(cashBtn);

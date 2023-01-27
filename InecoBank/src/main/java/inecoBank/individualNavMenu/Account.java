@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import util.WaitHelpers;
 
-import static util.URL.ACCOUNTS;
+import static util.url.Account.ACCOUNTS;
+
 
 public class Account extends BasePage {
     @FindBy(linkText = "Accounts")

@@ -3,7 +3,7 @@ package inecoBank.individualNavMenu.savings;
 import inecoBank.pages.BasePage;
 import org.openqa.selenium.support.PageFactory;
 
-import static util.URL.DEPOSIT_SIMPLE;
+import static util.url.Deposit.DEPOSIT_SIMPLE;
 
 public class Simple extends BasePage {
 
