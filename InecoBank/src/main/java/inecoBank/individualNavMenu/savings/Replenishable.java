@@ -3,7 +3,7 @@ package inecoBank.individualNavMenu.savings;
 import inecoBank.pages.BasePage;
 import org.openqa.selenium.support.PageFactory;
 
-import static util.url.Deposit.DEPOSITS_REPLENISHABLE;
+import static util.urls.Deposit.DEPOSITS_REPLENISHABLE;
 
 public class Replenishable extends BasePage {
     public Replenishable(){

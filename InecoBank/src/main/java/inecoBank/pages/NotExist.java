@@ -1,6 +1,6 @@
 package inecoBank.pages;
 
-import static util.url.URL.NOT_EXIST;
+import static util.urls.URL.NOT_EXIST;
 
 public class NotExist extends BasePage{
     public NotExist(){

@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static util.WaitHelpers.waitForJSToLoad;
-import static util.url.Card.*;
+import static util.urls.Card.*;
 
 public class Cards extends BasePage {
     @FindBy(linkText = "Cards")

@@ -13,13 +13,13 @@ import inecoBank.pages.NotExist;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static util.url.URL.CONTACT_US;
-import static util.url.Account.ACCOUNTS;
-import static util.url.Card.CARD_ARCA;
-import static util.url.Card.CARD_MASTER;
-import static util.url.Deposit.*;
-import static util.url.Loan.LOAN_ONE_CLCICK;
-import static util.url.URL.NOT_EXIST;
+import static util.urls.URL.CONTACT_US;
+import static util.urls.Account.ACCOUNTS;
+import static util.urls.Card.CARD_ARCA;
+import static util.urls.Card.CARD_MASTER;
+import static util.urls.Deposit.*;
+import static util.urls.Loan.LOAN_ONE_CLCICK;
+import static util.urls.URL.NOT_EXIST;
 
 public class IndividualTest extends BaseTest{
     private Individuals individual;

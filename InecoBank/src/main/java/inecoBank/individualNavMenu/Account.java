@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import util.WaitHelpers;
 
-import static util.url.Account.ACCOUNTS;
+import static util.urls.Account.ACCOUNTS;
 
 
 public class Account extends BasePage {

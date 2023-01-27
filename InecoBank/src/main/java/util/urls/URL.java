@@ -1,4 +1,4 @@
-package util.url;
+package util.urls;
 
 public class URL {
     public static final String BASE = "https://www.inecobank.am" ;

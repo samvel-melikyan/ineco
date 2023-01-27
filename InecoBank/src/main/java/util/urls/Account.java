@@ -1,6 +1,6 @@
-package util.url;
+package util.urls;
 
-import static util.url.URL.INDIVIDUALS;
+import static util.urls.URL.INDIVIDUALS;
 
 public class Account {
     public static final String ACCOUNTS = INDIVIDUALS + "/accounts" ;

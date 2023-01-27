@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static util.CustomElement.click;
-import static util.url.URL.INDIVIDUALS;
+import static util.urls.URL.INDIVIDUALS;
 import static util.WaitHelpers.waitForJSToLoad;
 
 public class Individuals extends BasePage {
