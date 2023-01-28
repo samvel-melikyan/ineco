@@ -5,11 +5,11 @@ import org.openqa.selenium.support.PageFactory;
 import util.CustomLoadableComponent;
 
 import static util.BaseDriver.getDriver;
-import static util.URL.BASE;
 import static util.WaitHelpers.waitForJSToLoad;
 
 abstract class Header extends CustomLoadableComponent<Header> {
     protected WebDriver driver;
+    protected String url;
 
     //////////////////////////////////////////<header>//////////////////////////////////////////////////////////////////////////////
 
@@ -51,13 +51,14 @@ abstract class Header extends CustomLoadableComponent<Header> {
 
     @Override
     protected void load() {
-
+        driver.get(this.url);
     }
 
 
     @Override
     protected void isLoaded() throws Error {
-
+        load();
+        waitForJSToLoad(driver);
     }
 
      protected abstract String getURL();

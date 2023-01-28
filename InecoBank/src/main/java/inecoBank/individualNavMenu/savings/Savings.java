@@ -33,7 +33,8 @@ public class Savings extends BasePage {
         return new Simple();
     }
 
-    public String getURL(){
+    @Override
+    public String getURL() {
         return driver.getCurrentUrl();
     }
 }

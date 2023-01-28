@@ -1,0 +1,1 @@
+{"uuid":"b0852848-887d-4910-a2fd-a1ff831c041e","name":"inecoBank.BaseTest.tearDown","children":["d653898a-5746-4104-ad17-52b4f2128785"],"description":"","befores":[],"afters":[{"name":"tearDown","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1674719847029,"stop":1674719847194}],"start":1674719847028,"stop":1674719847194}

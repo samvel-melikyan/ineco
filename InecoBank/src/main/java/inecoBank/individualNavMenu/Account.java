@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import util.WaitHelpers;
 
-import static util.URL.ACCOUNTS;
+import static util.urls.Account.ACCOUNTS;
+
 
 public class Account extends BasePage {
     @FindBy(linkText = "Accounts")
@@ -37,13 +38,15 @@ public class Account extends BasePage {
     ///////////////////////////////////////Aacount
     public Account (){
         super();
+        this.url = ACCOUNTS;
         get();
         PageFactory.initElements(driver, this );
     }
 
     @Override
     public void load() {
-        driver.get(ACCOUNTS);
+//        driver.get(url);
+        super.load();
     }
 
     @Override

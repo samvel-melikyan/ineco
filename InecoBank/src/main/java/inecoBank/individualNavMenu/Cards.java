@@ -5,8 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static util.URL.*;
 import static util.WaitHelpers.waitForJSToLoad;
+import static util.urls.Card.*;
 
 public class Cards extends BasePage {
     @FindBy(linkText = "Cards")
@@ -37,18 +37,10 @@ public class Cards extends BasePage {
 
     public Cards(){
         super();
+        this.url = CARDS;
         get();
         PageFactory.initElements(driver,this);
     }
-//    public Cards(String url){
-//        super();
-//        url = CARD_VISA;
-//        get();
-//        PageFactory.initElements(driver,this);
-//    }
-
-
-
 
     public void toVisa(){
         driver.navigate().to(CARD_VISA);
@@ -66,7 +58,8 @@ public class Cards extends BasePage {
 
     @Override
     public void load() {
-        driver.get(CARDS);
+//        driver.get(url);
+        super.load();
     }
     @Override
     public void isLoaded() throws Error {
