@@ -13,10 +13,9 @@ import inecoBank.pages.NotExist;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static util.urls.Card.*;
 import static util.urls.URL.CONTACT_US;
 import static util.urls.Account.ACCOUNTS;
-import static util.urls.Card.CARD_ARCA;
-import static util.urls.Card.CARD_MASTER;
 import static util.urls.Deposit.*;
 import static util.urls.Loan.LOAN_ONE_CLCICK;
 import static util.urls.URL.NOT_EXIST;
@@ -35,7 +34,7 @@ public class IndividualTest extends BaseTest{
         individual = new Individuals();
         Cards card = individual.visaBtn();
         card.toVisa();
-        Assert.assertEquals(cardVisa, card.getURL());
+        Assert.assertEquals(CARD_VISA, card.getURL());
     }
 
     @Test
