@@ -10,7 +10,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+
 import static util.CustomElement.click;
+import static util.CustomElement.sendKyes;
 import static util.urls.URL.INDIVIDUALS;
 import static util.WaitHelpers.waitForJSToLoad;
 
@@ -53,21 +56,21 @@ public class Individuals extends BasePage {
     private WebElement accounReplenishment;
 //
 //    //  Exchange RAtes
-//    @FindBy(className="btn btn--primary  ")
-//    private WebElement cashBtn;
-//    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[2]/button")
-//    private WebElement nonCashBtn;
-//    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/button")
-//    private WebElement onlineBtn;
-//    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[4]/button")
-//    private WebElement cardBtn;
+    @FindBy(className="btn btn--primary  ")
+    private WebElement cashBtn;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[2]/button")
+    private WebElement nonCashBtn;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/button")
+    private WebElement onlineBtn;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[4]/button")
+    private WebElement cardBtn;
 //    //Have
-//    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[1]/span")
-//    private WebElement have;
-//    @FindBy(id = "haveCurrencyAmount")
-//    private WebElement haveInpiut;
-//    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[2]/div")
-//    private ArrayList <WebElement> haveCheckItem;
+    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[1]/span")
+    private WebElement have;
+    @FindBy(id = "haveCurrencyAmount")
+    private WebElement haveInpiut;
+    @FindBy(css = "#root > div > main > div.currencyCalculatorGroupWrapper > div.container > div > div.currencyCalculatorGroup__item.currencyRates.container--main.c-row__col.c-row__col--5 > div.currencyRates__group > div > div.currencyCalculator__exchange > div > div:nth-child(1) > div:nth-child(2) > div > div > div > div.customDropDown__options")
+    private ArrayList<WebElement> haveCheckItem;
 //
 //    //Want
 //    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[3]/div[2]/div/div/div/div[1]/span")
@@ -162,29 +165,29 @@ public class Individuals extends BasePage {
         click(accounReplenishment);
         return new NotExist();
     }
-//
-//    public void cashBtnBn(){
-//        click(cashBtn);
-//    }
-//
-//    public void nonCashBtnBn(){
-//        click(nonCashBtn);
-//    }
-//
-//    public void onlineBn(){
-//        click(onlineBtn);
-//    }
-//
-//    public void cardBn(){
-//        click(cardBtn);
-//    }
-//    public ArrayList haveBn(){
-//        click(have);
-//        return haveCheckItem;
-//    }
-//    public void haveInpiutBn(String num){
-//        sendKyes(haveInpiut, num);
-//    }
+
+    public void cashBtnBn(){
+        click(cashBtn);
+    }
+
+    public void nonCashBtnBn(){
+        click(nonCashBtn);
+    }
+
+    public void onlineBn(){
+        click(onlineBtn);
+    }
+
+    public void cardBn(){
+        click(cardBtn);
+    }
+    public ArrayList haveBn(){
+        click(have);
+        return haveCheckItem;
+    }
+    public void haveInpiutBn(String num){
+        sendKyes(haveInpiut, num);
+    }
 //    public ArrayList wantBn(){
 //        click(want);
 //        return wantCheckItem;

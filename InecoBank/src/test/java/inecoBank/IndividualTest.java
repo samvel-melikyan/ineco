@@ -10,9 +10,13 @@ import inecoBank.individualNavMenu.savings.Savings;
 import inecoBank.pages.ContactUs;
 import inecoBank.pages.Individuals;
 import inecoBank.pages.NotExist;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
+import static util.CustomElement.click;
 import static util.urls.Card.*;
 import static util.urls.URL.CONTACT_US;
 import static util.urls.Account.ACCOUNTS;
@@ -112,6 +116,15 @@ public class IndividualTest extends BaseTest{
         NotExist notExist = individual.accounReplenishmentBtn();
         Assert.assertEquals(NOT_EXIST, notExist.getURL());
     }
+    @Test
+    public void usd(){
+        individual = new Individuals();
+        individual.cashBtnBn();
+        List<WebElement> have = individual.haveBn();
+        click(have.get(1));
+        Assert.assertEquals(NOT_EXIST, "");
+    }
+
 
 
 
