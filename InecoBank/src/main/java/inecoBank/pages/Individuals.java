@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static util.CustomElement.click;
 import static util.CustomElement.sendKyes;
@@ -56,7 +57,7 @@ public class Individuals extends BasePage {
     private WebElement accounReplenishment;
 //
 //    //  Exchange RAtes
-    @FindBy(className="btn btn--primary  ")
+    @FindBy(css = "#root > div > main > div.currencyCalculatorGroupWrapper > div.container > div > div.currencyCalculatorGroup__item.currencyRates.container--main.c-row__col.c-row__col--5 > div.currencyRates__group > div > div.currencyCalculator__tags > div > div > div:nth-child(1) > button")
     private WebElement cashBtn;
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[2]/button")
     private WebElement nonCashBtn;
@@ -69,7 +70,7 @@ public class Individuals extends BasePage {
     private WebElement have;
     @FindBy(id = "haveCurrencyAmount")
     private WebElement haveInpiut;
-    @FindBy(css = "#root > div > main > div.currencyCalculatorGroupWrapper > div.container > div > div.currencyCalculatorGroup__item.currencyRates.container--main.c-row__col.c-row__col--5 > div.currencyRates__group > div > div.currencyCalculator__exchange > div > div:nth-child(1) > div:nth-child(2) > div > div > div > div.customDropDown__options")
+    @FindBy(css = "#root > div > main > div.currencyCalculatorGroupWrapper > div.container > div > div.currencyCalculatorGroup__item.currencyRates.container--main.c-row__col.c-row__col--5 > div.currencyRates__group > div > div.currencyCalculator__exchange > div > div:nth-child(1) > div:nth-child(2) > div > div > div > div.customDropDown__options > div")
     private ArrayList<WebElement> haveCheckItem;
 //
 //    //Want
@@ -166,9 +167,9 @@ public class Individuals extends BasePage {
         return new NotExist();
     }
 
-    public void cashBtnBn(){
-        click(cashBtn);
-    }
+//    public void cashBtnBn(){
+//        click(cashBtn);
+//    }
 
     public void nonCashBtnBn(){
         click(nonCashBtn);

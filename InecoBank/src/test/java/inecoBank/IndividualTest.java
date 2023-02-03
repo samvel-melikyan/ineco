@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static util.CustomElement.click;
@@ -119,7 +120,7 @@ public class IndividualTest extends BaseTest{
     @Test
     public void usd(){
         individual = new Individuals();
-        individual.cashBtnBn();
+//        individual.cashBtnBn();
         List<WebElement> have = individual.haveBn();
         click(have.get(1));
         Assert.assertEquals(NOT_EXIST, "");
