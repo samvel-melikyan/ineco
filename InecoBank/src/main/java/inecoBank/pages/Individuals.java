@@ -8,9 +8,11 @@ import inecoBank.individualNavMenu.savings.Replenishable;
 import inecoBank.individualNavMenu.savings.Savings;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static util.CustomElement.click;
@@ -65,13 +67,14 @@ public class Individuals extends BasePage {
     private WebElement onlineBtn;
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[4]/button")
     private WebElement cardBtn;
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    //Have
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[1]/span")
     private WebElement have;
     @FindBy(id = "haveCurrencyAmount")
     private WebElement haveInpiut;
     @FindBy(css = "#root > div > main > div.currencyCalculatorGroupWrapper > div.container > div > div.currencyCalculatorGroup__item.currencyRates.container--main.c-row__col.c-row__col--5 > div.currencyRates__group > div > div.currencyCalculator__exchange > div > div:nth-child(1) > div:nth-child(2) > div > div > div > div.customDropDown__options > div")
-    private ArrayList<WebElement> haveCheckItem;
+    public static ArrayList<WebElement> haveCheckItem;
 //
 //    //Want
 //    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[3]/div[2]/div/div/div/div[1]/span")
@@ -167,9 +170,9 @@ public class Individuals extends BasePage {
         return new NotExist();
     }
 
-//    public void cashBtnBn(){
-//        click(cashBtn);
-//    }
+    public void cashBtnBn(){
+        click(cashBtn);
+    }
 
     public void nonCashBtnBn(){
         click(nonCashBtn);
@@ -182,10 +185,23 @@ public class Individuals extends BasePage {
     public void cardBn(){
         click(cardBtn);
     }
-    public ArrayList haveBn(){
-        click(have);
+    public  ArrayList haveBn(){
+//        click(have);
         return haveCheckItem;
     }
+
+    public static void main(String[] args) {
+        List<WebElement> blo = Individuals.haveCheckItem;
+//        for (WebElement i : blo){
+//            System.out.println();
+//        }
+        System.out.println(blo.size());
+
+    }
+
+
+
+
     public void haveInpiutBn(String num){
         sendKyes(haveInpiut, num);
     }

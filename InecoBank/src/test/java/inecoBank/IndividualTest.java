@@ -120,7 +120,7 @@ public class IndividualTest extends BaseTest{
     @Test
     public void usd(){
         individual = new Individuals();
-//        individual.cashBtnBn();
+        individual.cashBtnBn();
         List<WebElement> have = individual.haveBn();
         click(have.get(1));
         Assert.assertEquals(NOT_EXIST, "");
