@@ -18,7 +18,7 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
 
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver(109).exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver(110).exe");
         driver = getDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
@@ -30,16 +30,6 @@ public class BaseTest {
             driver.quit();
             setDriver(null);
         }
-    }
-
-    @Test(enabled = false)
-    private void test(){
-        driver.get("https://www.google.com/");
-        driver.get("https://www.yandex.ru/");
-        driver.get("https://www.mozilla.org/");
-        driver.navigate().back();
-        driver.navigate().back();
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.google.com/" );
     }
 
 }

@@ -1,0 +1,1 @@
+{"uuid":"43988386-e970-4f3f-a028-db1f0a79f6f5","name":"inecoBank.BaseTest.setUp","children":["9073b65b-2db5-462d-87e7-31fdb2c3f0ff"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1677485544564,"stop":1677485547508}],"afters":[],"start":1677485544563,"stop":1677485547509}

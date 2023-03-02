@@ -8,17 +8,14 @@ import inecoBank.individualNavMenu.savings.Replenishable;
 import inecoBank.individualNavMenu.savings.Savings;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import org.openqa.selenium.support.ui.Select;
 
 import static util.CustomElement.click;
-import static util.CustomElement.sendKyes;
-import static util.urls.URL.INDIVIDUALS;
+import static util.WaitHelpers.toBeSelected;
 import static util.WaitHelpers.waitForJSToLoad;
+import static util.urls.URL.INDIVIDUALS;
 
 public class Individuals extends BasePage {
     //  #come_online
@@ -66,16 +63,16 @@ public class Individuals extends BasePage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[3]/button")
     private WebElement onlineBtn;
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[1]/div/div/div[4]/button")
-    private WebElement cardBtn;
+    private  WebElement cardBtn;
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //    //Have
     @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[1]/span")
     private WebElement have;
     @FindBy(id = "haveCurrencyAmount")
     private WebElement haveInpiut;
-    @FindBy(css = "#root > div > main > div.currencyCalculatorGroupWrapper > div.container > div > div.currencyCalculatorGroup__item.currencyRates.container--main.c-row__col.c-row__col--5 > div.currencyRates__group > div > div.currencyCalculator__exchange > div > div:nth-child(1) > div:nth-child(2) > div > div > div > div.customDropDown__options > div")
-    public static ArrayList<WebElement> haveCheckItem;
-//
+    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[2]/div")
+    private WebElement have$selectItem;
+Select select;
 //    //Want
 //    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[3]/div[2]/div/div/div/div[1]/span")
 //    private WebElement want;
@@ -104,6 +101,7 @@ public class Individuals extends BasePage {
         super();
         this.url = INDIVIDUALS;
         get();
+        select = new Select(have$selectItem);
         PageFactory.initElements(driver,this);
     }
 
@@ -185,26 +183,24 @@ public class Individuals extends BasePage {
     public void cardBn(){
         click(cardBtn);
     }
-    public  ArrayList haveBn(){
-//        click(have);
-        return haveCheckItem;
+
+//    public  WebElement  getHave$selectItem(){
+////        click(have);
+//
+//       return have$selectItem;
+//    }
+    public void selectItem(){
+        select.selectByIndex(2);
+    }
+    public boolean isSelected(){
+
+        return have$selectItem.isSelected();
     }
 
-    public static void main(String[] args) {
-        List<WebElement> blo = Individuals.haveCheckItem;
-//        for (WebElement i : blo){
-//            System.out.println();
-//        }
-        System.out.println(blo.size());
 
-    }
-
-
-
-
-    public void haveInpiutBn(String num){
-        sendKyes(haveInpiut, num);
-    }
+//    public void haveInpiutBn(String num){
+//        sendKyes(haveInpiut, num);
+//    }
 //    public ArrayList wantBn(){
 //        click(want);
 //        return wantCheckItem;

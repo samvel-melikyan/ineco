@@ -7,22 +7,23 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 import static util.BaseDriver.getDriver;
 
 public class WaitHelpers {
-
-    private static WebDriverWait wait;
-
-    public static int waitTime = 10;
+    private static WebDriverWait wait;      // = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+    public static Duration waitTime = Duration.ofSeconds(10);
 
 
     public static void toBeClickable(WebElement element) {
-        wait = new WebDriverWait(getDriver(), waitTime);
+        wait = (WebDriverWait) new WebDriverWait(getDriver(), waitTime);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static void visibilityOf( WebElement element) {
-        wait = new WebDriverWait(getDriver(), waitTime);
+        wait = (WebDriverWait) new WebDriverWait(getDriver(), waitTime);
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -33,19 +34,19 @@ public class WaitHelpers {
 
     //  RETURNS BOOLEAN IF TITLE IS EQUAL TO GIVEN TEXT
 
-    public static void testToBePresent(WebDriver driver, WebElement element, String text) {
-        wait = new WebDriverWait(driver, waitTime);
+    public static void testToBePresent(WebElement element, String text) {
+        wait = new WebDriverWait(getDriver(), waitTime);
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
 
-    public static void title(WebDriver driver, String title) {
-        wait = new WebDriverWait(driver, waitTime);
+    public static void title( String title) {
+        wait = new WebDriverWait(getDriver(), waitTime);
         wait.until(ExpectedConditions.titleIs(title));
     }
 
-    public static boolean waitForJQuaryToLoad() {
+    public static Object waitForJQuaryToLoad() {
 
-        WebDriverWait wait = new WebDriverWait(getDriver(), 30);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
 
         // wait for jQuery to load
         ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
@@ -64,7 +65,7 @@ public class WaitHelpers {
 
 
     public static boolean waitForJSToLoad(WebDriver driver) {
-        wait = new WebDriverWait(driver, 30);
+        wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
         // wait for Javascript to load
         ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
             @Override

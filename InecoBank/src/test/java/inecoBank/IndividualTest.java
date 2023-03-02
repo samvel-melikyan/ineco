@@ -11,6 +11,7 @@ import inecoBank.pages.ContactUs;
 import inecoBank.pages.Individuals;
 import inecoBank.pages.NotExist;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -120,10 +121,16 @@ public class IndividualTest extends BaseTest{
     @Test
     public void usd(){
         individual = new Individuals();
-        individual.cashBtnBn();
-        List<WebElement> have = individual.haveBn();
-        click(have.get(1));
-        Assert.assertEquals(NOT_EXIST, "");
+        individual.selectItem();
+        Assert.assertTrue(individual.isSelected());
+//        individual.cashBtnBn();
+
+//        Select select = new Select(individual.getHave$selectItem());
+//        select.selectByIndex(2);
+//        ArrayList<WebElement> have = individual.haveBn();
+//        System.out.println(have.size());
+//        click(have.get(1));
+//        Assert.assertEquals(NOT_EXIST, "");
     }
 
 
