@@ -121,16 +121,9 @@ public class IndividualTest extends BaseTest{
     @Test
     public void usd(){
         individual = new Individuals();
-        individual.selectItem();
+        individual.selectHave();
         Assert.assertTrue(individual.isSelected());
-//        individual.cashBtnBn();
 
-//        Select select = new Select(individual.getHave$selectItem());
-//        select.selectByIndex(2);
-//        ArrayList<WebElement> have = individual.haveBn();
-//        System.out.println(have.size());
-//        click(have.get(1));
-//        Assert.assertEquals(NOT_EXIST, "");
     }
 
 

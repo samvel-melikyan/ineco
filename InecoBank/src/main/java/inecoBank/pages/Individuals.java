@@ -12,6 +12,8 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.ArrayList;
+
 import static util.CustomElement.click;
 import static util.WaitHelpers.toBeSelected;
 import static util.WaitHelpers.waitForJSToLoad;
@@ -70,9 +72,11 @@ public class Individuals extends BasePage {
     private WebElement have;
     @FindBy(id = "haveCurrencyAmount")
     private WebElement haveInpiut;
-    @FindBy(how = How.XPATH, using = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[2]/div")
-    private WebElement have$selectItem;
-Select select;
+//    @FindBy(css = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[1]/div[2]/div/div/div/div[2]/div")
+//    private WebElement have$selectItem;
+    @FindBy(className = "customDropDown__option")
+    private ArrayList<WebElement> have$selectItem;
+    Select select;
 //    //Want
 //    @FindBy(xpath = "//*[@id=\"root\"]/div/main/div[3]/div[1]/div/div[2]/div[2]/div/div[3]/div/div[3]/div[2]/div/div/div/div[1]/span")
 //    private WebElement want;
@@ -101,7 +105,6 @@ Select select;
         super();
         this.url = INDIVIDUALS;
         get();
-        select = new Select(have$selectItem);
         PageFactory.initElements(driver,this);
     }
 
@@ -184,17 +187,14 @@ Select select;
         click(cardBtn);
     }
 
-//    public  WebElement  getHave$selectItem(){
-////        click(have);
-//
-//       return have$selectItem;
-//    }
-    public void selectItem(){
-        select.selectByIndex(2);
+    public void selectHave(){
+//        select = new Select(have$selectItem);
+//        select.selectByVisibleText(name);
+
+        System.out.println(have$selectItem.size());
     }
     public boolean isSelected(){
-
-        return have$selectItem.isSelected();
+        return have$selectItem.size() > 0;
     }
 
 
